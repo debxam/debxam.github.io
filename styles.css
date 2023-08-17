@@ -40,7 +40,7 @@ body {
   cursor: pointer;
   padding: 10px;
 }
-.icon span {
+.icon svg {
   display: block;
   width: 30px;
   height: 3px;
@@ -74,13 +74,13 @@ body {
     display: block;
     padding: 10px 0;
   }
-  .icon.open span:nth-child(1) {
+  .icon.open svg:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
-  .icon.open span:nth-child(2) {
+  .icon.open svg:nth-child(2) {
     opacity: 0;
   }
-  .icon.open span:nth-child(3) {
+  .icon.open svg:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
 }
