@@ -1,4 +1,12 @@
 body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -35,21 +43,14 @@ body {
 .navbar a:hover {
   background-color: #444;
 }
-.icon {
-  display: none;
+.menu {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  padding: 10px;
+  display: flex;
+  padding: 0;
 }
-.icon svg {
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: white;
-  margin: 6px 0;
-  transition:
-    transform 0.3s,
-    opacity 0.3s;
-}
+
 @media screen and (max-width: 768px) {
   .navbar ul {
     display: none;
@@ -74,13 +75,37 @@ body {
     display: block;
     padding: 10px 0;
   }
-  .icon.open svg:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
+  .line {
+  fill: none;
+  stroke: black;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .icon.open svg:nth-child(2) {
-    opacity: 0;
+  .line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
   }
-  .icon.open svg:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
+  .line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
   }
-}
+  .line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+  }
+  .opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+  }
+  .opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+  }
+  .opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+  }
