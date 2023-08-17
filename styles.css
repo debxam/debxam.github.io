@@ -18,10 +18,18 @@ body {
   display: flex;
   align-items: center;
 }
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.navbar li {
+  margin-right: 20px;
+}
 .navbar a {
   color: white;
   text-decoration: none;
-  padding: 10px 20px;
   transition: background-color 0.3s;
 }
 .navbar a:hover {
@@ -29,32 +37,48 @@ body {
 }
 .icon {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
   cursor: pointer;
   padding: 10px;
 }
 .icon span {
   display: block;
   width: 30px;
-  height: 4px;
+  height: 3px;
   background-color: white;
+  margin: 6px 0;
   transition: transform 0.3s, opacity 0.3s;
 }
 @media screen and (max-width: 768px) {
-  .navbar a {
+  .navbar ul {
     display: none;
   }
   .icon {
     display: flex;
   }
+  .navbar.responsive ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+  }
+  .navbar.responsive li {
+    margin: 0;
+    text-align: center;
+  }
   .navbar.responsive a {
     display: block;
+    padding: 10px 0;
+  }
+  .icon.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
   .icon.open span:nth-child(2) {
-    transform: rotate(45deg);
+    opacity: 0;
   }
   .icon.open span:nth-child(3) {
-    transform: rotate(-45deg);
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 }
